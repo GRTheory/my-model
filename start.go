@@ -5,6 +5,8 @@ import (
 	"fmt"
 
 	"github.com/GRTheory/my-model/ent"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 func GetClient(username, password, host, port, database string) (*ent.Client, error) {
