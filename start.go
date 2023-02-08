@@ -10,7 +10,8 @@ import (
 )
 
 func GetClient(username, password, host, port, database string) (*ent.Client, error) {
-	connection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=True", username, password, host, port, database)
+	connection := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=True",
+		username, password, host, port, database)
 	client, err := ent.Open("mysql", connection)
 	if err != nil {
 		return nil, err
